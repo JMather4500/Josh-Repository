@@ -26,10 +26,11 @@ public class Week02
     {
         int multiplicand = 7;
         int multiplier = 1;
-        int product = multiplicand * multiplier; //the sum of multiplier and multiplicand
 
         while(multiplier <= 12) //the loop keeps going until multiplier is equal to or less than 12
         {
+            int product = multiplicand * multiplier; //the sum of multiplier and multiplicand
+
             System.out.println(product); //prints the product
             multiplier = multiplier +1; //adds one to multiplier and restarts the loop
         }
