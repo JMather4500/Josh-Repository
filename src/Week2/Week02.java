@@ -1,6 +1,8 @@
 package Week2;
+import helpers.InputReader;
 
-public class Week02 
+import java.util.helpers;
+public class Week02
 {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";
     public static void main(String[] args)
@@ -15,5 +17,19 @@ public class Week02
         System.out.println();
         System.out.println(" by Nicholas Day and Derek Peacock");
         System.out.println();
-    }     
+
+        Public static void doSevenTimesTable()
+        {
+
+            int multiplicand = 7;
+            int product;        //this will be the sum of the mutliplicand and multiplier
+            int multiplier;     //This will be inputted by the user
+
+            multiplier = InputReader.getInt("Please enter a value to multiply by 7 ");
+           product = multiplicand * multiplier;
+
+        } //sevenTimesTable ends
+    }
+
+
 }
