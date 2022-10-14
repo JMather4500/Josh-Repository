@@ -17,10 +17,24 @@ public class Week02
         System.out.println(" by Nicholas Day and Derek Peacock");
         System.out.println();
 
+        multiplyBySeven();
         doSevenTimesTable();
 
 
     }
+    private static void multiplyBySeven() //multiplys by seven up to 12
+    {
+        int multiplicand = 7;
+        int multiplier = 1;
+        int product = multiplicand * multiplier; //the sum of multiplier and multiplicand
+
+        while(multiplier <= 12) //the loop keeps going until multiplier is equal to or less than 12
+        {
+            System.out.println(product); //prints the product
+            multiplier = multiplier +1; //adds one to multiplier and restarts the loop
+        }
+    }//end of multiplyBySeven
+
     private static void doSevenTimesTable()
     {
 
