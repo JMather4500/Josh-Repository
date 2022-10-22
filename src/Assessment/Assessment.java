@@ -1,5 +1,7 @@
 package Assessment;
 
+import helpers.InputReader;
+
 import java.util.ArrayList;
 public class Assessment {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";
@@ -26,19 +28,42 @@ public class Assessment {
 
     private static void songList() {
 
+        int songListCommand;
+
         ArrayList<String> songs = new ArrayList<String>();
         songs.add("Bad Medicine");
-        songs.add("Bohemian Rhapsody");
-        songs.add("Passage To Bangkok") ;
-        songs.add("Heat of the Moment");
-        songs.add("The Spirit Of Radio");
-        songs.add("Freewill");
-        songs.add("Uprising");
+            songs.add("Bohemian Rhapsody");
+            songs.add("Passage To Bangkok") ;
+            songs.add("Heat of the Moment");
+            songs.add("The Spirit Of Radio");
+            songs.add("Freewill");
+            songs.add("Uprising");
         System.out.println(songs);
 
-        //for (song song : songs) {
-         //   song.print();
+        System.out.println("please enter the number associated with a command");
+        System.out.println("1: Add song");
+        System.out.println("2: Remove song");
+        System.out.println("3.show all songs");
+        System.out.println("4: show songs with a certain number of plays or more ");
 
-        }
+        songListCommand = InputReader.getInt("What do you want to do? ");
+
+            if (songListCommand == 1)   //This will prompt the user to enter a new song
+            {
+                songs.add(InputReader.getString("Please enter the name of the song you want to add "));
+            }
+            else if (songListCommand == 2) // This will prompt the user to remove a song
+            {
+                songs.remove(InputReader.getInt("Please enter the name of the song you wish to remove "));
+            }
+            else if (songListCommand == 3)  // This will display the songs as they appear in the array
+            {
+            System.out.println(songs);
+            }
+            else if (songListCommand == 4) //This will display songs over a given number of plays
+            {
+            System.out.println("test");
+            }//end of if statement
+    }
 
     }
