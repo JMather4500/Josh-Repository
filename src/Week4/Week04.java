@@ -16,5 +16,7 @@ public class Week04
         System.out.println(" by Nicholas Day and Derek Peacock");
         System.out.println();
     }     
-    
+    int studentID;
+
+
 }
