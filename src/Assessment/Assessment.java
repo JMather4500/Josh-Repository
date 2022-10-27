@@ -31,13 +31,13 @@ public class Assessment {
         int songListCommand;
 
         ArrayList<String> songs = new ArrayList<String>();
-        songs.add("Bad Medicine");
-            songs.add("Bohemian Rhapsody");
-            songs.add("Passage To Bangkok") ;
-            songs.add("Heat of the Moment");
-            songs.add("The Spirit Of Radio");
-            songs.add("Freewill");
-            songs.add("Uprising");
+            songs.add("Bad Medicine",2264,ints);
+            songs.add("Bohemian Rhapsody", 5568,ints);
+            songs.add("Passage To Bangkok", 2589,ints) ;
+            songs.add("Heat of the Moment"1598,ints);
+            songs.add("The Spirit Of Radio"6894,ints);
+            songs.add("Freewill",8498,ints);
+            songs.add("Uprising",2254,ints);
         System.out.println(songs);
 
         System.out.println("please enter the number associated with a command");
