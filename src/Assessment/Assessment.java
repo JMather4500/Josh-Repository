@@ -3,6 +3,8 @@ package Assessment;
 import helpers.InputReader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Assessment {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";
 
@@ -30,14 +32,14 @@ public class Assessment {
 
         int songListCommand;
 
-        ArrayList<String> songs = new ArrayList<String>();
-            songs.add("Bad Medicine",2264,ints);
-            songs.add("Bohemian Rhapsody", 5568,ints);
-            songs.add("Passage To Bangkok", 2589,ints) ;
-            songs.add("Heat of the Moment"1598,ints);
-            songs.add("The Spirit Of Radio"6894,ints);
-            songs.add("Freewill",8498,ints);
-            songs.add("Uprising",2254,ints);
+        HashMap<String, Integer> songs = new HashMap<String, Integer>();
+            songs.put("Bad Medicine",2264);
+            songs.put("Bohemian Rhapsody", 5568);
+            songs.put("Passage To Bangkok", 2589) ;
+            songs.put("Heat of the Moment", 1598);
+            songs.put("The Spirit Of Radio", 6894);
+            songs.put("Freewill",8498);
+            songs.put("Uprising",2254);
         System.out.println(songs);
 
         System.out.println("please enter the number associated with a command");
@@ -50,7 +52,7 @@ public class Assessment {
 
             if (songListCommand == 1)   //This will prompt the user to enter a new song
             {
-                songs.add(InputReader.getString("Please enter the name of the song you want to add "));
+                songs.put(InputReader.getString("Please enter the name of the song you want to add "));
             }
             else if (songListCommand == 2) // This will prompt the user to remove a song
             {
