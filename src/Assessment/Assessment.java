@@ -42,33 +42,42 @@ public class Assessment {
                 System.out.println("2: Remove song");
                 System.out.println("3.show all songs");
                 System.out.println("4: show songs with a certain number of plays or more ");
+                System.out.println(("5: end program"));
 
         songListCommand = InputReader.getInt("What do you want to do? ");
 
+        while (songListCommand != 5)
+        {
+            if (songListCommand == 1)   //This will prompt the user to enter a new song
+            {
+                //songs.add(InputReader.getString("Please enter the name of the song you want to add "));
 
-        //make a while loop
-        if (songListCommand == 1)   //This will prompt the user to enter a new song
-        {
-           // songs.add(InputReader.getString("Please enter the name of the song you want to add "));
+            } else if (songListCommand == 2) // This will prompt the user to remove a song
+            {
+                songs.remove(InputReader.getString("Please enter the name of the song you wish to remove "));
+            }
+            else if (songListCommand == 3)  // This will display the songs as they appear in the array
+               System.out.println(songs);
 
-        }
-        else if (songListCommand == 2) // This will prompt the user to remove a song
-        {
-            songs.remove(InputReader.getInt("Please enter the name of the song you wish to remove "));
-        }
-        else if (songListCommand == 3)  // This will display the songs as they appear in the array
-            System.out.println(songs);
-        else if (songListCommand == 4) //This will display songs over a given number of plays
-        {
-            System.out.println("test");
-        }//end of if statement
-    }
-    private Song[] newSong()
+            else if (songListCommand == 4) //This will display songs over a given number of plays
+            {
+                System.out.println("test");
+
+
+            }
+            else
+            {
+                System.out.println("This command is not recognised. PLease enter a valid command");
+            }//end of if statement
+
+        }//end of while loop
+    } // end of songlist
+    /*private Song[] newSong()
         {
             Song[] addNewSong = new Song[3];
 
             addNewSong[0] = InputReader.getString("Please enter the name of the song");
 
-        }
+        } */
 
 }
