@@ -3,15 +3,18 @@ package Assessment;
 import helpers.InputReader;
 import java.util.ArrayList;
 
-public class Assessment {
+public class Assessment
+{
 
-    ArrayList<Song> songs = new ArrayList<Song>();  //
-
-
-    public static void main(String[] args) {
+    static ArrayList<Song> songs = new ArrayList<Song>();  //
 
 
+    public static void main(String[] args)
+    {
         songList();
+        displayCommandList();
+        executeCommandList();
+
         //1. Add a new song to the list of songs
         //2. Remove a song from the list of songs
         //3. Print a list of all the songs stored
@@ -39,6 +42,7 @@ public class Assessment {
         new Song("Uprising", "Muse", 45746);
         songs.add(music);
     }//end of songList
+
     private static void displayCommandList()
     {
 
@@ -47,53 +51,68 @@ public class Assessment {
         System.out.println("2: Remove song");
         System.out.println("3.show all songs");
         System.out.println("4: show songs with a certain number of plays or more ");
-        System.out.println(("5: end program"));
+        System.out.println("5: end program");
     }//end of displayCommandList
 
-
-    private static void executeCommandList;
+    private static String addSong() //method for adding songs
     {
-        songListCommand = InputReader.getInt("What do you want to do? ");
+        String title = InputReader.getString("Please enter the title of the song ");
+        String artist = InputReader.getString("Please enter the name of the artist ");
+        Integer count = InputReader.getInt("Please enter the number of listens ");
+
+        Song song = new Song(title, artist, count);
+        return title + " " + artist + " " + count;
+    }//end of addSong
+
+    private static void removeSong() //method to remove song
+    {
+        String title = InputReader.getString("please enter the title of the song ");
+        String artist = InputReader.getString("Please enter the name of the artist ");
+        Integer count = InputReader.getInt("Please enter the number of listens ");
+
+        Song song = new Song(title, artist, count);
+        songs.remove(song);
+    }//end of removeSong
+
+
+    private static String executeCommandList()
+    {
+        int songListCommand = InputReader.getInt("What do you want to do? ");
 
         while (songListCommand != 5)
         {
             if (songListCommand == 1)   //This will prompt the user to enter a new song
             {
-                private void addSong();
-                {
-                    String title = InputReader.getString();
-                    String artist = InputReader.getString();
-                    Integer count = InputReader.getInt();
-
-                    Song song = new Song(title, artist, count);
-                    Song.add(song);
-                }
-
-            } else if (songListCommand == 2) // This will prompt the user to remove a song
-            {
-               private void removeSong();
-                {
-                    String title = InputReader.getString();
-                    String artist = InputReader.getString();
-                    Integer count = InputReader.getInt();
-
-                    Song song = new Song(title, artist, count);
-                    Song.remove(song);
-                }
+                addSong();
+                songListCommand = InputReader.getInt("What do you want to do? ");
             }
-            else if (songListCommand == 3)  // This will display the songs as they appear in the array
-               System.out.println(songs);
 
+            else if (songListCommand == 2) // This will prompt the user to remove a song
+            {
+                removeSong();
+                songListCommand = InputReader.getInt("What do you want to do? ");
+            }
+
+            else if (songListCommand == 3)  // This will display the songs as they appear in the array
+            {
+                System.out.println(songs);
+                songListCommand = InputReader.getInt("What do you want to do? ");
+            }
             else if (songListCommand == 4) //This will display songs over a given number of plays
             {
                 System.out.println("test");
-
+                songListCommand = InputReader.getInt("What do you want to do? ");
 
             }
             else
             {
                 System.out.println("This command is not recognised. PLease enter a valid command");
+                songListCommand = InputReader.getInt("What do you want to do? ");
             }//end of if statement
 
         }//end of while loop
+
+
+        return null;
     } // end of executeCommandList
+}//End of Assessment
