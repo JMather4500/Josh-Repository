@@ -12,7 +12,7 @@ public class Assessment
 
     public static void main(String[] args)
     {
-        songList();
+        addMusic();
         displayCommandList();
         executeCommandList();
 
@@ -22,27 +22,33 @@ public class Assessment
         //4. Print a list of songs over a given number of plays
     }
 
-    private static void songList()
+    private static void addMusic()
     {
 
-        int songListCommand;
+        int addMusicCommand;
 
         //adding default songs to list
         Song music = new Song("Bad Medicine", "artist", 1234); //new music object for song array list
         songs.add(music); //adding to list
-        new Song("Bohemian Rhapsody", "Queen", 50000);
+
+        music = new Song("Bohemian Rhapsody", "Queen", 50000);
         songs.add(music);
-        new Song("Passage To Bangkok", "Rush", 3215);
+
+        music =  new Song("Passage To Bangkok", "Rush", 3215);
         songs.add(music);
-        new Song("Heat of the Moment", "NSP", 5674);
+
+        music = new Song("Heat of the Moment", "NSP", 5674);
         songs.add(music);
-        new Song("The Spirit Of Radio", "Rush", 24685);
+
+        music = new Song("The Spirit Of Radio", "Rush", 24685);
         songs.add(music);
-        new Song("Freewill", "Rush", 84544);
+
+        music = new Song("Freewill", "Rush", 84544);
         songs.add(music);
-        new Song("Uprising", "Muse", 45746);
+
+        music =  new Song("Uprising", "Muse", 45746);
         songs.add(music);
-    }//end of songList
+    }//end of addMusic
 
     private static void displayCommandList()
     {
