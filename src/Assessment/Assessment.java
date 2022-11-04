@@ -74,7 +74,8 @@ public class Assessment
         Integer count = InputReader.getInt("Please enter the number of listens ");
 
         Song song = new Song(title, artist, count);
-        songs.remove(song);
+
+        songs.remove(title);
     }//end of removeSong
 
     private int displayCommandList()
