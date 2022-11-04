@@ -8,14 +8,14 @@ public class Assessment
 {
 
     private ArrayList<Song> songs = new ArrayList<Song>();  //
+    boolean endProgram = false;
 
-
-    public void run()
+    public void run()  //runs the program from the App.java
     {
         addMusic();
-        boolean endProgram = false;
+
         int choice = 0;
-        while (endProgram != true)
+        while (endProgram != true)  //loops between displaying command list and executing the command
         {
             choice = displayCommandList();
             executeCommandList(choice);
@@ -114,6 +114,10 @@ public class Assessment
         {
             System.out.println("test");
 
+        }
+        else if (songListCommand == 5) // this will end the loop
+        {
+            endProgram = true;
         }
         else
         {
