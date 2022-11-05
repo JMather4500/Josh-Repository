@@ -33,7 +33,7 @@ public class Assessment
         int addMusicCommand;
 
         //adding default songs to list
-        Song music = new Song("Bad Medicine", "artist", 1234); //new music object for song array list
+        Song music = new Song("Bad Medicine", "Bon Jovi", 1234); //new music object for song array list
         songs.add(music); //adding to list
 
         music = new Song("Bohemian Rhapsody", "Queen", 50000);
@@ -64,10 +64,12 @@ public class Assessment
         Integer count = InputReader.getInt("Please enter the number of listens ");
 
         Song song = new Song(title, artist, count);
+        songs.add(song);
         return title + " " + artist + " " + count;
+
     }//end of addSong
 
-    private void removeSong() //method to remove song
+    private String removeSong() //method to remove song
     {
         String title = InputReader.getString("please enter the title of the song ");
         String artist = InputReader.getString("Please enter the name of the artist ");
@@ -75,8 +77,23 @@ public class Assessment
 
         Song song = new Song(title, artist, count);
 
-        songs.remove(title);
+        songs.remove(String.valueOf(title));
+        songs.remove(String.valueOf(artist));
+        songs.remove(Integer.valueOf(count));
+
+        return title + " " + artist + " " + count;
     }//end of removeSong
+
+    private void printInOrder() //This will print songs with a certain value or more
+    {
+        int count = InputReader.getInt("Please enter the value you wish to see equal or more of ");
+
+        if (songs => count)
+        {
+            System.out.println(songs);
+        }
+            return;
+    }//end of Print in order
 
     private int displayCommandList()
     {
@@ -99,6 +116,8 @@ public class Assessment
         if (songListCommand == 1)   //This will prompt the user to enter a new song
         {
             addSong();
+
+
         }
 
         else if (songListCommand == 2) // This will prompt the user to remove a song
@@ -113,7 +132,7 @@ public class Assessment
         }
         else if (songListCommand == 4) //This will display songs over a given number of plays
         {
-            System.out.println("test");
+            printInOrder();
 
         }
         else if (songListCommand == 5) // this will end the loop
