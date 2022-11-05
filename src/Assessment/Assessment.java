@@ -77,6 +77,7 @@ public class Assessment
 
         Song song = new Song(title, artist, count);
 
+        //songs.remove(song);
         songs.remove(String.valueOf(title));
         songs.remove(String.valueOf(artist));
         songs.remove(Integer.valueOf(count));
