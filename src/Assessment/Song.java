@@ -1,5 +1,10 @@
 package Assessment;
 
+
+/**
+ * This class gives value to the song id, song title, artist name, and number of plays
+ * it also creates SongNumber integer
+*/
 public class Song {
 
     private int id; //holds the value of the ID

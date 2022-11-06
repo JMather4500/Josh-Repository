@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class Assessment
 {
 
-    private ArrayList<Song> songs = new ArrayList<Song>();  //declaring array and linking it to Song Class
+    private static ArrayList<Song> songs = new ArrayList<Song>();  //declaring array and linking it to Song Class
     boolean endProgram = false;
 
-    int playCount = Song.getPlayCount(); // gives playCount the value of the playCount in Song.java
+
 
     public void run()  //runs the program from the App.java
     {
@@ -71,25 +71,27 @@ public class Assessment
 
     }//end of addSong
 
-    private int removeSong() //method to remove song
+    private void removeSong() //method to remove song
     {
         int id = InputReader.getInt("Please enter the ID of the song you wish to remove ");
 
-        //Song song = new Song(title, artist, count);
-
-        //songs.remove(song);
         songs.remove(id - 1);
 
-        return id;
+        return;
     }//end of removeSong
 
-    private int printLarger() //This will print songs with over a certain number of plays
+    private int printLarger() //This will print songs with over an amount that the user enters
     {
         int count = InputReader.getInt("Please enter the value you wish to see more than ");
 
-        if (count < playCount)
         {
-            System.out.println(songs);
+
+
+            for(int songPosition = 0; songPosition < songs.size(); songPosition++)
+            {
+                if (count < songs.get(songPosition).getPlayCount())
+                System.out.println(songs.get(songPosition).toString());
+            }
         }
 
             return count;
