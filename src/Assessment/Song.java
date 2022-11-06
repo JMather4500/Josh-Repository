@@ -2,8 +2,9 @@ package Assessment;
 
 
 /**
- * This class gives value to the song id, song title, artist name, and number of plays
- * it also creates SongNumber integer
+ * This class stores information to be used later
+ * it also creates an ID using songNumber
+ * @author Joshua
 */
 public class Song {
 

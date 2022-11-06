@@ -11,8 +11,10 @@ public class Assessment
     boolean endProgram = false;
 
 
-
-    public void run()  //runs the program from the App.java
+    /**
+     * runs the program from the App.java
+     */
+    public void run()
     {
         addMusic();
 
@@ -29,6 +31,9 @@ public class Assessment
         //4. Print a list of songs over a given number of plays
     }
 
+    /**
+     * creates default values for the Array list
+     */
     private void addMusic()
     {
 
@@ -97,6 +102,9 @@ public class Assessment
             return count;
     }//end of printLarger
 
+    /**
+     * Presents the user with options
+     */
     private int displayCommandList()
     {
 
@@ -111,6 +119,9 @@ public class Assessment
         return songListCommand;
     }//end of displayCommandList
 
+    /**
+     * Executes methods based on user input
+     */
     private void executeCommandList(int songListCommand) // This contains an if statement for running commands that the user chooses
     {
 
