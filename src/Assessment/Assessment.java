@@ -85,12 +85,13 @@ public class Assessment
 
     private void printLarger() //This will print songs with over a certain number of plays
     {
-        int count = InputReader.getInt("Please enter the value you wish to see equal or more of ");
+        int count = InputReader.getInt("Please enter the value more of ");
 
         if (count < playCount)
         {
             System.out.println(songs);
         }
+
             return;
     }//end of printLarger
 
@@ -101,7 +102,7 @@ public class Assessment
         System.out.println("1: Add song");
         System.out.println("2: Remove song");
         System.out.println("3.show all songs");
-        System.out.println("4: show songs with a certain number of plays or more ");
+        System.out.println("4: show songs with more than a certain number of plays ");
         System.out.println("5: end program");
 
         int songListCommand = InputReader.getInt("What do you want to do? ");
