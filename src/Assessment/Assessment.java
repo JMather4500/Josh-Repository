@@ -7,8 +7,10 @@ import java.util.ArrayList;
 public class Assessment
 {
 
-    private ArrayList<Song> songs = new ArrayList<Song>();  //
+    private ArrayList<Song> songs = new ArrayList<Song>();  //declaring array and linking it to Song method
     boolean endProgram = false;
+
+    int playCount = 1;//<getPlayCount> NoOfPlays = get;
 
     public void run()  //runs the program from the App.java
     {
@@ -33,16 +35,16 @@ public class Assessment
         int addMusicCommand;
 
         //adding default songs to list
-        Song music = new Song("Bad Medicine", "Bon Jovi", 1234); //new music object for song array list
+        Song music = new Song( "Bad Medicine", "Bon Jovi", 1234); //new music object for song array list
         songs.add(music); //adding to list
 
-        music = new Song("Bohemian Rhapsody", "Queen", 50000);
+        music = new Song( "Bohemian Rhapsody", "Queen", 50000);
         songs.add(music);
 
-        music =  new Song("Passage To Bangkok", "Rush", 3215);
+        music =  new Song( "Passage To Bangkok", "Rush", 3215);
         songs.add(music);
 
-        music = new Song("Heat of the Moment", "NSP", 5674);
+        music = new Song( "Heat of the Moment", "NSP", 5674);
         songs.add(music);
 
         music = new Song("The Spirit Of Radio", "Rush", 24685);
@@ -69,32 +71,28 @@ public class Assessment
 
     }//end of addSong
 
-    private String removeSong() //method to remove song
+    private int removeSong() //method to remove song
     {
-        String title = InputReader.getString("please enter the title of the song ");
-        String artist = InputReader.getString("Please enter the name of the artist ");
-        Integer count = InputReader.getInt("Please enter the number of listens ");
+        int id = InputReader.getInt("Please enter the ID of the song you wish to remove ");
 
-        Song song = new Song(title, artist, count);
+        //Song song = new Song(title, artist, count);
 
         //songs.remove(song);
-        songs.remove(String.valueOf(title));
-        songs.remove(String.valueOf(artist));
-        songs.remove(Integer.valueOf(count));
+        songs.remove(id - 1);
 
-        return title + " " + artist + " " + count;
+        return id;
     }//end of removeSong
 
-    private void printInOrder() //This will print songs with a certain value or more
+    private void printLarger() //This will print songs with over a certain number of plays
     {
         int count = InputReader.getInt("Please enter the value you wish to see equal or more of ");
 
-        if (songs => count)
+        if (count < playCount)
         {
             System.out.println(songs);
         }
             return;
-    }//end of Print in order
+    }//end of printLarger
 
     private int displayCommandList()
     {
@@ -110,7 +108,7 @@ public class Assessment
         return songListCommand;
     }//end of displayCommandList
 
-    private void executeCommandList(int songListCommand)
+    private void executeCommandList(int songListCommand) // This contains an if statement for running commands that the user chooses
     {
 
 
@@ -133,7 +131,7 @@ public class Assessment
         }
         else if (songListCommand == 4) //This will display songs over a given number of plays
         {
-            printInOrder();
+            printLarger();
 
         }
         else if (songListCommand == 5) // this will end the loop
