@@ -27,7 +27,7 @@ public class Song {
         return "Song ID: " + id + "Song Name " +  title + " by " + artistName + " plays " + playCount + "\n";
     }// end of toString arrangement
 
-    public int getPlayCount() // makes it possible to access playCount from outside the Method
+    public int getPlayCount() // makes it possible to access playCount from outside the Class
     {
         return playCount;
     }  // end of getPlayCount

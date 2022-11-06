@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class Assessment
 {
 
-    private ArrayList<Song> songs = new ArrayList<Song>();  //declaring array and linking it to Song method
+    private ArrayList<Song> songs = new ArrayList<Song>();  //declaring array and linking it to Song Class
     boolean endProgram = false;
 
-    int playCount = 1;//<getPlayCount> NoOfPlays = get;
+    int playCount = Song.getPlayCount(); // gives playCount the value of the playCount in Song.java
 
     public void run()  //runs the program from the App.java
     {
@@ -83,16 +83,16 @@ public class Assessment
         return id;
     }//end of removeSong
 
-    private void printLarger() //This will print songs with over a certain number of plays
+    private int printLarger() //This will print songs with over a certain number of plays
     {
-        int count = InputReader.getInt("Please enter the value more of ");
+        int count = InputReader.getInt("Please enter the value you wish to see more than ");
 
         if (count < playCount)
         {
             System.out.println(songs);
         }
 
-            return;
+            return count;
     }//end of printLarger
 
     private int displayCommandList()
