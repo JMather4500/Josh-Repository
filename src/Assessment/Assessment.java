@@ -13,6 +13,12 @@ public class Assessment
 
     /**
      * runs the program from the App.java
+     * this code will perform the following functions
+     * 1. Add a new song to the list of songs
+     * 2. Remove a song from the list of songs
+     * 3. Print a list of all the songs stored
+     * 4. Print a list of songs over a given number of plays
+     * @author Joshua
      */
     public void run()
     {
@@ -25,10 +31,7 @@ public class Assessment
             executeCommandList(choice);
         }
 
-        //1. Add a new song to the list of songs
-        //2. Remove a song from the list of songs
-        //3. Print a list of all the songs stored
-        //4. Print a list of songs over a given number of plays
+
     }
 
     /**
@@ -63,7 +66,9 @@ public class Assessment
     }//end of addMusic
 
 
-
+/**
+ * Method to add a new song to the array list
+ */
     private String addSong() //method for adding songs
     {
         String title = InputReader.getString("Please enter the title of the song ");
@@ -76,6 +81,9 @@ public class Assessment
 
     }//end of addSong
 
+    /**
+     * Method to remove a song from the array list
+     */
     private void removeSong() //method to remove song
     {
         int id = InputReader.getInt("Please enter the ID of the song you wish to remove ");
@@ -85,7 +93,10 @@ public class Assessment
         return;
     }//end of removeSong
 
-    private int printLarger() //This will print songs with over an amount that the user enters
+    /**
+     * This method will print songs with over an amount that the user enters
+     */
+    private int printLarger()
     {
         int count = InputReader.getInt("Please enter the value you wish to see more than ");
 
@@ -122,33 +133,33 @@ public class Assessment
     /**
      * Executes methods based on user input
      */
-    private void executeCommandList(int songListCommand) // This contains an if statement for running commands that the user chooses
+    private void executeCommandList(int songListCommand)
     {
 
 
-        if (songListCommand == 1)   //This will prompt the user to enter a new song
+        if (songListCommand == 1)
         {
             addSong();
 
 
         }
 
-        else if (songListCommand == 2) // This will prompt the user to remove a song
+        else if (songListCommand == 2)
         {
             removeSong();
 
         }
 
-        else if (songListCommand == 3)  // This will display the songs as they appear in the array
+        else if (songListCommand == 3)
         {
             System.out.println(songs);
         }
-        else if (songListCommand == 4) //This will display songs over a given number of plays
+        else if (songListCommand == 4)
         {
             printLarger();
 
         }
-        else if (songListCommand == 5) // this will end the loop
+        else if (songListCommand == 5)
         {
             endProgram = true;
         }
